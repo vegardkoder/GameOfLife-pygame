@@ -6,6 +6,7 @@ import time
 
 try:
     NUM_BLOCKS = int(input("Amount of blocks^2: "))
+    gen_time = float(input("Delay between genereations in seconds (float): "))
 except:
     print("Not valid input")
 
@@ -79,7 +80,7 @@ while True:
 
     if game_running:
         current_cells = np.copy(next_gen)
-        time.sleep(0.25)
+        time.sleep(gen_time)
 
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN:
