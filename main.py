@@ -4,7 +4,11 @@ import copy
 import math
 import time
 
-NUM_BLOCKS = 40
+try:
+    NUM_BLOCKS = int(input("Amount of blocks^2: "))
+except:
+    print("Not valid input")
+
 blockSize = 20
 
 pygame.init()
@@ -75,7 +79,7 @@ while True:
 
     if game_running:
         current_cells = np.copy(next_gen)
-        time.sleep(0.5)
+        time.sleep(0.25)
 
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN:
